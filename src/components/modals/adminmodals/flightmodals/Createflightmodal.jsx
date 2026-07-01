@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ModalShell from "./ModalShell";
-import FlightFormFields from "./Flightformfields";
+import FlightFormFields from "./FlightFormFields";
 import { createFlight } from "../../../../api/adminFlights";
 import { showError, showSuccess } from "../../../../utils/toast";
 import { parseApiError } from "../../../../utils/apiError";
