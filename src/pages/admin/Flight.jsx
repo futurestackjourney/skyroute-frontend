@@ -9,8 +9,8 @@ import { getAllAircrafts } from "../../api/aircraftApi";
 import { showError } from "../../utils/toast";
 
 import FlightTable      from "../../components/modals/adminmodals/flightmodals/FlightTable";
-import CreateFlightModal from "../../components/modals/adminmodals/flightmodals/Createflightmodal";
-import EditFlightModal  from "../../components/modals/adminmodals/flightmodals/Editflightmodal";
+import CreateFlightModal from "../../components/modals/adminmodals/flightmodals/CreateFlightModal";
+import EditFlightModal  from "../../components/modals/adminmodals/flightmodals/EditFlightModal";
 import SeatModal        from "../../components/modals/adminmodals/flightmodals/SeatModal";
 
 

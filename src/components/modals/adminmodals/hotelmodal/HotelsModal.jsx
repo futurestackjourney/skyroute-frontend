@@ -83,7 +83,6 @@ const HotelsModal = ({ title, form, setForm, onClose, onSubmit }) => {
           <input
             type="file"
             placeholder="Image URL"
-            type="file"
             onChange={(e) =>
               setForm({
                 ...form,
