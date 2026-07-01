@@ -1,0 +1,286 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  background: #f7f9fb;
+  color: oklch(34.591% 0.04142 235.083);
+  font-family: "SN Pro", sans-serif;
+  /* overflow-x: hidden; */
+}
+
+@theme {
+  --color-pumpkin: oklch(73.073% 0.17623 49.145);
+  --color-pumpkin-50: oklch(75.197% 0.17126 45.899);
+  --color-pumpkin-100: oklch(77.669% 0.14767 52.458);
+  --color-charcoal: oklch(34.591% 0.04142 235.083);
+  --color-charcoal-50: oklch(40.469% 0.04507 235.227);
+  --color-charcoal-100: oklch(49.466% 0.04468 236.159);
+  --color-primary: oklch(34.591% 0.04142 235.083);
+  --color-secondary: oklch(55.102% 0.02343 264.389);
+  --color-card: #fff3e9;
+  --color-surface: oklch(96.826% 0.00696 248.26);
+  --color-muted: oklch(55.439% 0.04078 257.446);
+  --color-accent: oklch(76.858% 0.1646 70.075);
+  --color-creame: #f5f5f5;
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer components {
+  .padding-x-lg {
+    @apply px-5 md:px-20;
+  }
+
+  .padding-x {
+    @apply px-5 md:px-10;
+  }
+
+  .nav-links {
+    @apply flex gap-4;
+  }
+
+  .profile-link {
+    @apply px-4 py-2 space-y-4 flex flex-col;
+  }
+
+  .profile-link:hover {
+    @apply bg-pumpkin rounded-md transition hover:text-creame;
+  }
+  .profile-link:active {
+    @apply bg-pumpkin-100 rounded-md transition hover:text-creame;
+  }
+  .dashboard-link {
+    @apply px-4 py-2 space-y-4 flex flex-col;
+  }
+  .dashboard-link:hover {
+    @apply text-creame hover:text-charcoal transition rounded-md;
+  }
+
+  /* Input fields */
+  .form-label {
+    @apply text-sm font-medium text-charcoal;
+  }
+
+  .form-input {
+    @apply w-full rounded-md border border-gray-300 px-4 py-4 text-sm
+           focus:outline-none focus:ring-2
+           focus:ring-charcoal focus:border-charcoal;
+  }
+  .form-btn {
+    @apply bg-charcoal text-white px-4 py-3 sm:py-4 rounded-md hover:bg-charcoal-100 transition w-full;
+  }
+
+  .form-input-error {
+    @apply border-red-500 focus:ring-red-500 focus:border-red-500;
+  }
+
+  .book-input {
+    @apply max-w-md w-full text-[0.8rem] border border-gray-300 bg-white focus:ring-2 focus:ring-pumpkin ;
+  }
+  .search-input {
+    @apply p-4 rounded-lg w-full bg-white shadow-md focus:outline-2 focus:ring-2 focus:ring-pumpkin;
+  }
+
+  .register-form {
+    @apply bg-charcoal/40 p-8 rounded-3xl shadow-md w-full max-w-md mt-4 sm:mt-10;
+  }
+  .regsiter-title {
+    @apply text-2xl font-bold text-white mb-6 text-center;
+  }
+  .register-btn {
+    @apply bg-pumpkin text-white px-4 py-4 rounded-md hover:bg-pumpkin-100 transition w-full;
+  }
+  .register-group {
+    @apply grid grid-cols-1 sm:grid-cols-[30%_70%] gap-2 items-center;
+  }
+  .register-input {
+    @apply w-full h-full min-h-11 mr-3 bg-white rounded-md border border-gray-300 py-4 px-4  text-base sm:text-sm
+           focus:outline-none focus:ring-2
+           focus:ring-pumpkin focus:border-pumpkin;
+  }
+  .register-label {
+    @apply text-sm font-medium text-white text-nowrap sm:text-end sm:my-auto;
+  }
+  .login-form {
+    @apply bg-charcoal/40 p-8 rounded-3xl shadow-md w-full max-w-sm mt-16 sm:mt-12;
+  }
+  .login-input {
+    @apply w-full h-full min-h-11 mr-3 bg-white rounded-md border border-gray-300  px-4 py-4 text-base sm:text-sm font-medium
+           focus:outline-none focus:ring-2
+           focus:ring-pumpkin focus:border-pumpkin;
+  }
+  .login-btn {
+    @apply bg-pumpkin text-white px-4 py-3 sm:py-4 rounded-md hover:bg-pumpkin-100 transition w-full;
+  }
+  .error-message {
+    @apply text-red-600 text-sm leading-3 bg-white/50 p-2 rounded-md mt-1 max-w-full w-max h-full;
+  }
+
+  /* Desktop Bar */
+  .input-field {
+    @apply w-full rounded-md border border-gray-300 px-4 py-4 text-sm
+           focus:outline-none focus:ring-2
+           focus:ring-pumpkin focus:border-pumpkin;
+  }
+  .input-search {
+    @apply px-4 py-2 rounded-xl w-full sm:w-[32%] bg-[#f0f0f0] shadow-sm
+    focus:outline-2 focus:outline-pumpkin;
+  }
+  .form-label {
+    @apply text-sm font-medium text-gray-500 absolute bg-white p-1 -top-2 left-4;
+  }
+  .form-group {
+    @apply grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4;
+  }
+  .form-button {
+    @apply bg-pumpkin text-white px-4 py-3 sm:py-4 rounded-md hover:bg-pumpkin-100 transition w-full;
+  }
+}
+
+.font-tech {
+  font-family: "Share Tech", sans-serif;
+}
+.font-rubik {
+  font-family: "Rubik", sans-serif;
+}
+.font-snpro {
+  font-family: "SN Pro", sans-serif;
+}
+
+/* NAVBAR */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links ul {
+  display: flex;
+  gap: 14px;
+}
+
+.profile-links .profile-link:hover {
+  background-color: oklch(73.073% 0.17623 49.145);
+}
+.profile-links .dashboard-link:hover {
+  background-color: oklch(94.611% 0.00011 271.152);
+}
+
+/* INPUTS */
+.book-input:focus {
+  outline: none;
+  /* border-color: #efefef; */
+  /* box-shadow:
+    inset 0 1px 4px #b5aaff7a,
+    0 0 20px 2px #ffd9c46c; */
+}
+
+.search-input:focus {
+  outline: none;
+  /* border-color: var(--color-pumpkin);
+  box-shadow:
+    inset 0 1px 4px #ffc8aa7a,
+    0 0 20px 2px #ffd9c46c; */
+}
+
+/* .search-list{
+  outline: none;
+  border-color: var(--color-pumpkin);
+  box-shadow:
+    inset 0 1px 2px #ffc8aa7a,
+    0 0 20px 2px #ffd9c46c;
+} */
+.scrollerbar-hidden {
+  /* Chrome, Edge, Safari */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Firefox */
+  scrollbar-width: none;
+
+  /* IE / Old Edge */
+  -ms-overflow-style: none;
+}
+
+.scrollable-element {
+  scrollbar-width: thin;
+  scrollbar-color: #496678 #f1f1f1; /* Thumb color, then Track color */
+}
+
+.masked-text {
+  /* font-size: 8rem;
+  font-weight: bold; */
+  -webkit-text-stroke: 1px rgba(107, 107, 107, 0.177);
+  /* For Firefox compatibility, though support is limited */
+  -moz-text-stroke: 2px #ff0000;
+  color: #233d4c50;
+  background-image: url("/images/aircraft.png");
+  background-size: 896px; /* Enlarged for smooth animation */
+  background-position: center;
+  background-clip: text;
+  background-attachment: fixed;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #233d4c67;
+  /* animation: animate-background 5s infinite alternate linear; */
+}
+
+@keyframes animate-background {
+  0% {
+    background-position: 0 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.review-card {
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 42%,
+    97% 51%,
+    93% 56%,
+    86% 59%,
+    76% 59%,
+    70% 60%,
+    64% 64%,
+    59% 69%,
+    57% 75%,
+    57% 82%,
+    56% 89%,
+    53% 94%,
+    48% 97%,
+    39% 100%,
+    0 100%
+  );
+}
+
+.soft-btn {
+  clip-path: polygon(
+    100% 0,
+    100% 100%,
+    0 100%,
+    0 46%,
+    1% 29%,
+    3% 16%,
+    7% 7%,
+    13% 1%,
+    20% 0,
+    27% 0
+  );
+}
