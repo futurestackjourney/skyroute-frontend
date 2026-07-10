@@ -310,7 +310,7 @@ const FlightSearch = () => {
     <div className="min-h-screen bg-slate-50">
 
       {/* ── Hero search bar ── */}
-      <div className="bg-[url('images/search-bg.png')] bg-cover bg-center  px-4 py-10 sm:py-14">
+      <div className="bg-[url('/images/search-bg.png')] bg-cover bg-center  px-4 py-10 sm:py-14">
         <div className="max-w-5xl mx-auto">
 
           {/* Heading */}
